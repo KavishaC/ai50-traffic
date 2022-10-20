@@ -1,0 +1,7 @@
+I initially started with a convolutional neural network similar to the one used in the lecture. With one convolution layer (32 filters of size (3, 3)), one pooling layer (size: (2, 2)) and one hidden layer (size: 128). Running the program returned a low accuracy of 0.0559 and a loss of 3.5014.
+
+I first added an identical second hidden layer but got no increase in accuracy. I removed the hidden layer I added and then added a second round of convolution and pooling layers. Which radically increased accuracy to 0.9693. Adding another pair decreased accuracy to 0.9051 so I reverted back to only two pairs. 
+
+I increased the number of filters from 32 to 64 and it increased accuracy to 0.9663. Then I increased the size of the filter to (4, 4) which decreased accuracy to 0.9153. I reverted back to (3, 3). Increasing the size of the hidden layer to 256 slightly reduced accuracy but decreasing the size to 64 slightly increased accuracy to 0.9678. I then increased the pool size to 4, 4 but got an error in return that I could not troubleshoot.
+
+I finally increased dropout to 0.7 which returned a low accuracy of 0.3827. I reduced it to 0.4 and got 0.9561. Which is still lesser than the 0.9678 I got for 0.5. I therefore decided to stick with 0.5 for dropout.
